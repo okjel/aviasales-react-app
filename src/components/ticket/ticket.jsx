@@ -4,7 +4,6 @@ import styles from './ticket.module.scss';
 import logo from '../../images/S7-logo.png';
 
 const Ticket = ({ styles: parentStyles }) => {
-  console.log(parentStyles);
   return (
     <div className={styles.container} style={parentStyles}>
       <div className={styles.row}>

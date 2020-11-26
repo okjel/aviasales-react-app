@@ -4,19 +4,21 @@ import cx from 'classnames';
 import styles from './checkbox.module.scss';
 import shared from '../shared.module.scss';
 
-const Checkbox = ({ title }) => {
+const Checkbox = ({ data, onChecked }) => {
+  const { id, name, active } = data;
   const inputClasses = cx(styles.input, shared['visually-hidden']);
   return (
     <label className={styles.check}>
-      <input className={inputClasses} type="checkbox" />
+      <input className={inputClasses} type="checkbox" checked={active} onChange={() => onChecked(id)} />
       <span className={styles.checkbox} />
-      {title}
+      {name}
     </label>
   );
 };
 
 Checkbox.propTypes = {
-  title: PropTypes.string.isRequired,
+  data: PropTypes.objectOf(Object).isRequired,
+  onChecked: PropTypes.func.isRequired,
 };
 
 export default Checkbox;

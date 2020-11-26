@@ -1,23 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import cx from 'classnames';
 import styles from './tickets-types.module.scss';
 import Title from '../../shared/title';
+import * as actions from '../../actions/tabs-filter';
 
-const TicketsTypes = ({ styles: parentStyles }) => {
-  const [activeTab, setActiveTab] = useState(1);
+const TicketsTypes = ({ styles: parentStyles, filterTabs, setActiveTab }) => {
+  const { tabContent, active } = filterTabs;
 
-  const tabs = [
-    { id: 1, text: 'Самый дешевый' },
-    { id: 2, text: 'Самый быстрый' },
-  ];
-
-  const tabsRender = tabs.map((tab) => {
+  const tabsRender = tabContent.map((tab) => {
     const btnCx = cx(styles.tab, {
-      [styles.active]: activeTab === tab.id,
+      [styles.active]: active === tab.id,
     });
 
-    const titleStyles = { color: activeTab === tab.id ? '#ffffff' : null, cursor: 'inherit' };
+    const titleStyles = { color: active === tab.id ? '#ffffff' : null, cursor: 'inherit' };
 
     return (
       <button className={btnCx} type="button" key={tab.id} onClick={() => setActiveTab(tab.id)}>
@@ -35,10 +32,18 @@ const TicketsTypes = ({ styles: parentStyles }) => {
 
 TicketsTypes.propTypes = {
   styles: PropTypes.objectOf(Object),
+  filterTabs: PropTypes.objectOf(Object).isRequired,
+  setActiveTab: PropTypes.func.isRequired,
 };
 
 TicketsTypes.defaultProps = {
   styles: {},
 };
 
-export default TicketsTypes;
+const mapStateToProps = (state) => {
+  return {
+    filterTabs: state.filterTabs,
+  };
+};
+
+export default connect(mapStateToProps, actions)(TicketsTypes);
