@@ -23,45 +23,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c21934e-ce2c-4ea9-93cb-e93f3c719e19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/apiRequest.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/loading.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/pages.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/buttonMore/buttonMore.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/buttonMore/buttonMore.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/buttonMore/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loading-info/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loading-info/loading-info.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/loading-info/loading-info.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/segment/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/segment/segment.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/segment/segment.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/services/aviasales-api-service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/error/error.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/error/error.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/error/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/loader/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/loader/loader.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/loader/loader.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/no-data/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/no-data/no-data.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/shared/no-data/no-data.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/filters/filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filters/filters.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/main/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ticket/ticket.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ticket/ticket.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ticket/ticket.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ticket/ticket.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tickets-types/tickets-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tickets-types/tickets-types.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/tickets/tickets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tickets/tickets.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/shared/checkbox/checkbox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/checkbox/checkbox.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/shared/checkbox/checkbox.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/checkbox/checkbox.module.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +102,7 @@
       <workItem from="1606562061637" duration="623000" />
       <workItem from="1606567770250" duration="13996000" />
       <workItem from="1606649648042" duration="20062000" />
-      <workItem from="1606670655639" duration="816000" />
+      <workItem from="1606670655639" duration="2596000" />
     </task>
     <servers />
   </component>
