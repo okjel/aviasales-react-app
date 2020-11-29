@@ -1,51 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import hash from 'object-hash';
 import styles from './ticket.module.scss';
-import logo from '../../images/S7-logo.png';
+import Segment from '../segment';
 
-const Ticket = ({ styles: parentStyles }) => {
+const Ticket = ({ data: { price, carrier, segments }, styles: parentStyles }) => {
+  const renderSegments = segments.map((segment) => {
+    return <Segment key={hash(segment)} data={segment} />;
+  });
+
   return (
     <div className={styles.container} style={parentStyles}>
       <div className={styles.row}>
-        <div className={styles.price}>13 400 Р</div>
-
-        <img src={logo} alt="S7 logo" />
+        <div className={styles.price}>{`${new Intl.NumberFormat('ru-RU').format(price)} Р`}</div>
+        <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={`${carrier} logo`} />
       </div>
-
-      <div className={styles.option}>
-        <div className={styles['timestamp-info']}>
-          <div className={styles.title}>MOW – HKT</div>
-          <div className={styles.content}>10:45 – 08:00</div>
-        </div>
-        <div className={styles['travel-time']}>
-          <div className={styles.title}>В пути</div>
-          <div className={styles.content}>21ч 15м</div>
-        </div>
-        <div className={styles['transfer-info']}>
-          <div className={styles.title}>2 пересадки</div>
-          <div className={styles.content}>HKG, JNB</div>
-        </div>
-      </div>
-      <div className={styles.option}>
-        <div className={styles['timestamp-info']}>
-          <div className={styles.title}>MOW – HKT</div>
-          <div className={styles.content}>10:45 – 08:00</div>
-        </div>
-        <div className={styles['travel-time']}>
-          <div className={styles.title}>В пути</div>
-          <div className={styles.content}>21ч 15м</div>
-        </div>
-        <div className={styles['transfer-info']}>
-          <div className={styles.title}>2 пересадки</div>
-          <div className={styles.content}>HKG, JNB</div>
-        </div>
-      </div>
+      {renderSegments}
     </div>
   );
 };
 
 Ticket.propTypes = {
-  styles: PropTypes.objectOf(Object),
+  styles: PropTypes.instanceOf(Object),
+  data: PropTypes.shape({
+    price: PropTypes.number,
+    carrier: PropTypes.string,
+    segments: PropTypes.arrayOf(
+      PropTypes.shape({
+        date: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+        duration: PropTypes.number.isRequired,
+        origin: PropTypes.string.isRequired,
+        destination: PropTypes.string.isRequired,
+        stops: PropTypes.arrayOf(PropTypes.string).isRequired,
+      })
+    ),
+  }).isRequired,
 };
 
 Ticket.defaultProps = {

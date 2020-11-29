@@ -6,9 +6,7 @@ import styles from './tickets-types.module.scss';
 import Title from '../../shared/title';
 import * as actions from '../../actions/tabs-filter';
 
-const TicketsTypes = ({ styles: parentStyles, filterTabs, setActiveTab }) => {
-  const { tabContent, active } = filterTabs;
-
+const TicketsTypes = ({ styles: parentStyles, filterTabs: { tabContent, active }, setActiveTab }) => {
   const tabsRender = tabContent.map((tab) => {
     const btnCx = cx(styles.tab, {
       [styles.active]: active === tab.id,
@@ -16,8 +14,12 @@ const TicketsTypes = ({ styles: parentStyles, filterTabs, setActiveTab }) => {
 
     const titleStyles = { color: active === tab.id ? '#ffffff' : null, cursor: 'inherit' };
 
+    const onClick = () => {
+      if (tab.id !== active) setActiveTab(tab.id);
+    };
+
     return (
-      <button className={btnCx} type="button" key={tab.id} onClick={() => setActiveTab(tab.id)}>
+      <button className={btnCx} type="button" key={tab.id} onClick={onClick}>
         <Title text={tab.text} styles={titleStyles} />
       </button>
     );

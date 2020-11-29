@@ -1,0 +1,15 @@
+.btn {
+  background-color: #2196f3;
+  border: 0;
+  padding: 20px;
+  width: 100%;
+  border-radius: 6px;
+  cursor: url('../../images/cursor.svg'), pointer;
+  transition: all 0.4s;
+  color: white;
+  margin-bottom: 20px;
+
+  &:hover {
+    background-color: lightblue;
+  }
+}

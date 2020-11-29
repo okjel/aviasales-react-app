@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,17 +23,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3c21934e-ce2c-4ea9-93cb-e93f3c719e19" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/checkboxes-filter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/tabs-filter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/apiRequest.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/actions/pages.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/buttonMore/buttonMore.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/buttonMore/buttonMore.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/buttonMore/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loading-info/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loading-info/loading-info.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/loading-info/loading-info.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/segment/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/segment/segment.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/segment/segment.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/services/aviasales-api-service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/error/error.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/error/error.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/error/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/loader/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/loader/loader.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/loader/loader.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/no-data/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/no-data/no-data.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/shared/no-data/no-data.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/app/app.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/filters/filters.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/filters/filters.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/header/header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/header/header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/main/main.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/main/main.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ticket/ticket.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ticket/ticket.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ticket/ticket.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ticket/ticket.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/tickets-types/tickets-types.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tickets-types/tickets-types.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/tickets/tickets.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/tickets/tickets.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducer/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducer/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/shared/checkbox/checkbox.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/shared/checkbox/checkbox.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +86,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -102,7 +133,12 @@
       <workItem from="1606206709846" duration="598000" />
       <workItem from="1606235246482" duration="1679000" />
       <workItem from="1606294267051" duration="27098000" />
-      <workItem from="1606390949829" duration="9334000" />
+      <workItem from="1606390949829" duration="9945000" />
+      <workItem from="1606453305584" duration="33788000" />
+      <workItem from="1606562061637" duration="623000" />
+      <workItem from="1606567770250" duration="13996000" />
+      <workItem from="1606649648042" duration="20062000" />
+      <workItem from="1606670655639" duration="816000" />
     </task>
     <servers />
   </component>
@@ -120,6 +156,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="572" y="352" width="519" height="229" key="#Stylelint" timestamp="1606317425829">
@@ -162,13 +201,21 @@
       <screen x="74" y="27" width="1526" height="873" />
     </state>
     <state x="447" y="77" width="770" height="780" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/74.27.1526.873@74.27.1526.873" timestamp="1606304849478" />
-    <state x="528" y="202" width="618" height="522" key="find.popup" timestamp="1606405778530">
+    <state x="618" y="378" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606671165261">
       <screen x="74" y="27" width="1526" height="873" />
     </state>
-    <state x="528" y="202" width="618" height="522" key="find.popup/74.27.1526.873@74.27.1526.873" timestamp="1606405778530" />
-    <state x="501" y="207" key="run.anything.popup" timestamp="1606310672550">
+    <state x="618" y="378" width="438" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/74.27.1526.873@74.27.1526.873" timestamp="1606671165261" />
+    <state x="528" y="202" width="618" height="580" key="find.popup" timestamp="1606669908822">
       <screen x="74" y="27" width="1526" height="873" />
     </state>
-    <state x="501" y="207" key="run.anything.popup/74.27.1526.873@74.27.1526.873" timestamp="1606310672550" />
+    <state x="528" y="202" width="618" height="580" key="find.popup/74.27.1526.873@74.27.1526.873" timestamp="1606669908822" />
+    <state x="501" y="207" key="run.anything.popup" timestamp="1606671176905">
+      <screen x="74" y="27" width="1526" height="873" />
+    </state>
+    <state x="501" y="207" key="run.anything.popup/74.27.1526.873@74.27.1526.873" timestamp="1606671176905" />
+    <state x="500" y="214" width="672" height="678" key="search.everywhere.popup" timestamp="1606671372524">
+      <screen x="74" y="27" width="1526" height="873" />
+    </state>
+    <state x="500" y="214" width="672" height="678" key="search.everywhere.popup/74.27.1526.873@74.27.1526.873" timestamp="1606671372524" />
   </component>
 </project>
