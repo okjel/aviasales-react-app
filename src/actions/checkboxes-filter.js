@@ -1,1 +1,3 @@
-export const activateTransfer = (id) => ({ type: 'ACTIVATE_TRANSFER', payload: id });
+import actionTypes from './action-types';
+
+export const activateTransfer = (id) => ({ type: actionTypes.activateTransfer, payload: id });

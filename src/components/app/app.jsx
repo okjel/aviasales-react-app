@@ -19,7 +19,7 @@ const App = ({ searchId, setSearchId, getTickets }) => {
   return (
     <div className={classes.container}>
       <Header />
-      <Filters styles={{ marginRight: '20px' }} />
+      <Filters className={classes.filters} />
       <Main />
     </div>
   );
@@ -37,8 +37,8 @@ App.defaultProps = {
 
 const mapStateToProps = (store) => {
   return {
-    searchId: store.searchId,
-    isLoadAll: store.isLoadAll,
+    searchId: store.other.searchId,
+    isLoadAll: store.other.isLoadAll,
   };
 };
 

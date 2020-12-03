@@ -1,3 +1,5 @@
-export const showMore = () => ({ type: 'SHOW_MORE' });
+import actionTypes from './action-types';
 
-export const setShowMoreBtn = (value) => ({ type: 'SET_SHOW_MORE_BTN', payload: value });
+export const showMore = () => ({ type: actionTypes.showMore });
+
+export const setShowMoreBtn = (value) => ({ type: actionTypes.setShowMoreBtn, payload: value });

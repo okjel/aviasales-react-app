@@ -1,108 +1,75 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import hash from 'object-hash';
 import { connect } from 'react-redux';
 import Ticket from '../ticket';
 import * as actions from '../../actions/pages';
-import { setLoading } from '../../actions/loading';
-import Loader from '../../shared/loader';
-import NoData from '../../shared/no-data';
+import NoData from '../shared/no-data';
 
-const Tickets = React.memo(
-  ({ tickets, pages, filterTabs, transfers, setShowMoreBtn, setLoading: setLoad, loading }) => {
-    const [elementsOnPage] = useState(10);
-    const [renderTickets, setRenderTickets] = useState(null);
+const Tickets = ({ tickets, pages, filterTabs, transfers, setShowMoreBtn }) => {
+  const elementsOnPage = 10;
+  const [renderTickets, setRenderTickets] = useState([]);
 
-    const sortData = useCallback(
-      (data) => {
-        return data.sort((prevTicket, nextTicket) => {
-          if (filterTabs.active === filterTabs.tabContent[0].id) {
-            return prevTicket.price - nextTicket.price;
-          }
-          return (
-            prevTicket.segments.sort((prevSegment, nextSegment) => prevSegment.duration - nextSegment.duration)[0]
-              .duration -
-            nextTicket.segments.sort((prevSegment, nextSegment) => prevSegment.duration - nextSegment.duration)[0]
-              .duration
-          );
-        });
-      },
-      [filterTabs.active, filterTabs.tabContent]
-    );
+  const sortData = useCallback(
+    (data) => {
+      return data.sort((prevTicket, nextTicket) => {
+        if (filterTabs[0].active) {
+          return prevTicket.price - nextTicket.price;
+        }
+        return (
+          prevTicket.segments.sort((prevSegment, nextSegment) => prevSegment.duration - nextSegment.duration)[0]
+            .duration -
+          nextTicket.segments.sort((prevSegment, nextSegment) => prevSegment.duration - nextSegment.duration)[0]
+            .duration
+        );
+      });
+    },
+    [filterTabs]
+  );
 
-    const filterData = useCallback(
-      (data) => {
-        return data.filter((ticket) => {
-          let result = false;
-          transfers.forEach((transfer) => {
-            if (
-              transfer.checked &&
-              ((transfer.id === 2 && ticket.segments.filter((segment) => segment.stops.length === 0).length > 0) ||
-                (transfer.id === 3 && ticket.segments.filter((segment) => segment.stops.length === 1).length > 0) ||
-                (transfer.id === 4 && ticket.segments.filter((segment) => segment.stops.length === 2).length > 0) ||
-                (transfer.id === 5 && ticket.segments.filter((segment) => segment.stops.length === 3).length > 0))
-            ) {
-              result = true;
-            }
-          });
-          return result;
-        });
-      },
-      [transfers]
-    );
+  const filterData = useCallback(
+    (data) =>
+      data.filter((ticket) => {
+        return (
+          transfers[ticket.segments[0].stops.length + 1].checked ||
+          transfers[ticket.segments[1].stops.length + 1].checked
+        );
+      }),
+    [transfers]
+  );
 
-    const convertToNotes = useCallback(
-      (data) => {
-        return data
-          .filter((el, idx) => idx < elementsOnPage * pages)
-          .map((ticket) => <Ticket key={hash(ticket)} data={ticket} styles={{ marginBottom: '20px' }} />);
-      },
-      [elementsOnPage, pages]
-    );
+  const convertToNotes = (data) => {
+    return data.map((ticket) => <Ticket key={ticket.id} data={ticket} />);
+  };
 
-    useEffect(() => {
-      setLoad(true);
-      const sortedData = sortData(tickets);
-      const filteredData = filterData(sortedData);
-      const renderElements = convertToNotes(filteredData);
-      setRenderTickets(renderElements);
+  useEffect(() => {
+    const sortedData = sortData(tickets);
+    const filteredData = filterData(sortedData);
+    const shownTickets = filteredData.slice(0, elementsOnPage * pages);
+    setRenderTickets(shownTickets);
+    setShowMoreBtn(filteredData.length > elementsOnPage);
+  }, [sortData, filterData, elementsOnPage, setShowMoreBtn, tickets, pages]);
 
-      if (filteredData.length > elementsOnPage) setShowMoreBtn(true);
-      if (filteredData.length <= elementsOnPage) setShowMoreBtn(false);
-
-      setLoad(false);
-    }, [setLoad, sortData, filterData, convertToNotes, elementsOnPage, setShowMoreBtn, tickets]);
-
-    if (loading) {
-      return <Loader />;
-    }
-
-    if (!renderTickets.length) {
-      return <NoData />;
-    }
-
-    return renderTickets;
+  if (!renderTickets.length) {
+    return <NoData />;
   }
-);
 
+  return convertToNotes(renderTickets);
+};
 Tickets.propTypes = {
   tickets: PropTypes.arrayOf(Object).isRequired,
   pages: PropTypes.number.isRequired,
   transfers: PropTypes.instanceOf(Array).isRequired,
   filterTabs: PropTypes.instanceOf(Object).isRequired,
   setShowMoreBtn: PropTypes.func.isRequired,
-  setLoading: PropTypes.func.isRequired,
-  loading: PropTypes.bool.isRequired,
 };
 
-const mapStateToProps = ({ tickets, pages, transfers, filterTabs, loading }) => {
+const mapStateToProps = ({ tickets, filter: transfers, sort: filterTabs, other: { pages } }) => {
   return {
     tickets,
     pages,
     transfers,
     filterTabs,
-    loading,
   };
 };
 
-export default connect(mapStateToProps, { ...actions, setLoading })(Tickets);
+export default connect(mapStateToProps, actions)(Tickets);

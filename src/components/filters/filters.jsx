@@ -1,34 +1,35 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import cx from 'classnames';
 import styles from './filters.module.scss';
-import Checkbox from '../../shared/checkbox';
-import Title from '../../shared/title';
+import Checkbox from '../shared/checkbox';
+import Title from '../shared/title';
 import * as actions from '../../actions/checkboxes-filter';
 
-const Filters = ({ styles: parentStyles, transfers, activateTransfer }) => {
+const Filters = ({ className: parentStyles, transfers, activateTransfer }) => {
   const checkboxesRender = transfers.map((transfer) => {
     return <Checkbox key={transfer.id} data={transfer} onChecked={activateTransfer} />;
   });
 
-  const titleStyles = { marginLeft: '20px', marginBottom: '10px' };
+  const classes = cx(styles.container, parentStyles);
   return (
-    <div className={styles.container} style={parentStyles}>
-      <Title text="Количество пересадок" styles={titleStyles} />
+    <div className={classes}>
+      <Title text="Количество пересадок" classes={styles.title} />
       {checkboxesRender}
     </div>
   );
 };
 
 Filters.propTypes = {
-  styles: PropTypes.objectOf(Object).isRequired,
+  className: PropTypes.string.isRequired,
   transfers: PropTypes.arrayOf(Object).isRequired,
   activateTransfer: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state) => {
   return {
-    transfers: state.transfers,
+    transfers: state.filter,
   };
 };
 

@@ -4,13 +4,13 @@ import hash from 'object-hash';
 import styles from './ticket.module.scss';
 import Segment from '../segment';
 
-const Ticket = ({ data: { price, carrier, segments }, styles: parentStyles }) => {
+const Ticket = ({ data: { price, carrier, segments } }) => {
   const renderSegments = segments.map((segment) => {
     return <Segment key={hash(segment)} data={segment} />;
   });
 
   return (
-    <div className={styles.container} style={parentStyles}>
+    <div className={styles.container}>
       <div className={styles.row}>
         <div className={styles.price}>{`${new Intl.NumberFormat('ru-RU').format(price)} Р`}</div>
         <img src={`http://pics.avs.io/99/36/${carrier}.png`} alt={`${carrier} logo`} />
@@ -21,7 +21,6 @@ const Ticket = ({ data: { price, carrier, segments }, styles: parentStyles }) =>
 };
 
 Ticket.propTypes = {
-  styles: PropTypes.instanceOf(Object),
   data: PropTypes.shape({
     price: PropTypes.number,
     carrier: PropTypes.string,
@@ -35,10 +34,6 @@ Ticket.propTypes = {
       })
     ),
   }).isRequired,
-};
-
-Ticket.defaultProps = {
-  styles: {},
 };
 
 export default Ticket;
